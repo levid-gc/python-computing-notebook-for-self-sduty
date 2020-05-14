@@ -53,7 +53,7 @@ PS C:\Users\Levid\projects\virtual-env-test>
 
 VS Code 配置参见：[Environments](https://code.visualstudio.com/docs/python/environments)。
 
-1. 修改 pip 镜像（可选，但是建议更改）：
+7. 修改 pip 镜像（可选，但是建议更改）：
 
 在 `venv` 目录中新建 `pip.ini` 文件，文件中使用以下配置：
 
