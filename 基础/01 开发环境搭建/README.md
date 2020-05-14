@@ -1,8 +1,8 @@
 # Python 开发环境搭建
 
-本教程针对 [Virtualenv](https://virtualenv.pypa.io/en/latest/) 与 [Visual Studio Code](https://code.visualstudio.com/)。 
+## Virtualenv
 
-1. 安装 Virtualenv（VS Code 的安装不再赘述）：
+1. 安装 Virtualenv：
 
 ```bash
 pip install virtualenv
@@ -51,8 +51,6 @@ PS C:\Users\Levid\projects\virtual-env-test> & c:/Users/Levid/projects/virtual-e
 PS C:\Users\Levid\projects\virtual-env-test> 
 ```
 
-VS Code 配置参见：[Environments](https://code.visualstudio.com/docs/python/environments)。
-
 7. 修改 pip 镜像（可选，但是建议更改）：
 
 在 `venv` 目录中新建 `pip.ini` 文件，文件中使用以下配置：
@@ -64,7 +62,24 @@ index-url=http://mirrors.aliyun.com/pypi/simple/
 [install]
 trusted-host=mirrors.aliyun.com
 ```
-国内可用的镜像：
+
+`evnv` 这个目录本身在版本控制中是需要加入忽略列表的， 所以里面安装的包都不会保存的，因此我们我们如果需要同步这些包信息，需要使用到 `requirements.txt` 文件来记录安装包信息：
+
+```bash
+pip freeze > requirements.txt
+```
+
+这个命令将会创建一个 `requirements.txt` 文件，当中会包含当前环境中安装的所有包的信息。如需安装这些包，只需执行以下命令：
+
+```bash
+pip install -r requirements.txt
+```
+
+## Pipenv
+
+鉴于看了这篇 [博文](https://zhuanlan.zhihu.com/p/80478490)，就不打算整理这个资料了。
+
+## 国内 pip 镜像
 
 - 阿里云 http://mirrors.aliyun.com/pypi/simple/
 - 豆瓣(douban) http://pypi.douban.com/simple/
@@ -72,4 +87,8 @@ trusted-host=mirrors.aliyun.com
 - 清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/
 - 中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/
 
-关于 `pip` 的配置内容参见：[pip User Guide](https://pip.pypa.io/en/stable/user_guide/#configuration)。
+## 参考资料
+
+- [Visual Studio Code Python 环境配置](https://code.visualstudio.com/docs/python/environments)
+- [Pip 配置](https://pip.pypa.io/en/stable/user_guide/#configuration)
+- [Python 虚拟环境](https://docs.python-guide.org/dev/virtualenvs/)
